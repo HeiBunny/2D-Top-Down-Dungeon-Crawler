@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 649454146}
   - component: {fileID: 649454148}
   - component: {fileID: 649454147}
+  - component: {fileID: 649454149}
   m_Layer: 0
   m_Name: CollisionObjects
   m_TagString: Untagged
@@ -301,7 +302,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -784,6 +785,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &649454149
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649454145}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1500926302
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,6 +4692,10 @@ PrefabInstance:
     - target: {fileID: 2085198439277861942, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426295307555555330, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+      propertyPath: collisionOffset
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
