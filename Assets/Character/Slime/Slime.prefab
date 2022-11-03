@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6730212180339883409}
   - component: {fileID: 2055974847482853556}
   - component: {fileID: 6348874090983725315}
+  - component: {fileID: 1488018911583635527}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -137,3 +138,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+--- !u!95 &1488018911583635527
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4506196620959618254}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ccd426a27d5a84121ac6c60f389823b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
