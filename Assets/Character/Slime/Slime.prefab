@@ -137,7 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3fe7555143a4e46a2748fd2c509671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
   health: 1
+  target: {x: 0, y: 0}
+  player: {fileID: 0}
 --- !u!95 &660950138613849914
 Animator:
   serializedVersion: 4
