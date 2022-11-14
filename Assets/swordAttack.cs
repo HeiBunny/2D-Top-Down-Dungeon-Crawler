@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class swordAttack : MonoBehaviour
+public class SwordAttack : MonoBehaviour
 {
     public Collider2D swordCollider; 
     Vector2 rightAttackOffset;
+    GameObject enemy;
+
     public float damage = 3;
 
     private void Start() {

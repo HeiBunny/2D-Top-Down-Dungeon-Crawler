@@ -4,9 +4,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Animator animator;
 
+
+    public float moveSpeed = .05f;
     public float health = 1;
+    Animator animator;
+    public Vector2 target;
+    public GameObject player; 
+
+    private void Start(){
+            animator = GetComponent<Animator>();
+            player = GameObject.FindGameObjectWithTag("Player");
+        
+        }
+    void Update(){
+        float step = moveSpeed * Time.deltaTime;
+        target = new Vector2(player.transform.position.x, player.transform.position.y);
+        transform.position = Vector2.MoveTowards(transform.position, target, step);
+    }
+
 
     public float Health{
         set{
@@ -20,16 +36,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Start(){
-        animator = GetComponent<Animator>();
-    }
+   
  
     public void Defeated(){
-        animator.SetTrigger("Defeated");
+       animator.SetTrigger("Defeated");
     }
 
     public void RemoveEnemy(){
-        Destroy(gameObject);
+         Destroy(gameObject);
     }
+
+
 
 }
