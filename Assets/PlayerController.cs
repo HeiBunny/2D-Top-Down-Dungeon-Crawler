@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void SwordAttack(){
-        LockMovement();
+        // LockMovement();
 
         if(spriteRenderer.flipX == true){
             swordAttack.AttackLeft();

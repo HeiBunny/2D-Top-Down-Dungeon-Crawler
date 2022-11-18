@@ -34,15 +34,18 @@ public class Enemy : MonoBehaviour
     }
     private void FixedUpdate(){
         Vector2 d2 = player.transform.position - transform.position;
+        float spd = Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y);
         if(Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) > 0.2 && Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) < 1.2){
             if(d2 != Vector2.zero){
                         bool success = TryMove(d2);
 
                         if(!success && d2.x != 0){
-                            success = TryMove(new Vector2(d2.x, 0));
+                            success = TryMove(new Vector2(spd, 0));
+                            //(d2.x / Mathf.Abs(d2.x))
 
                             if(!success){
-                                success = TryMove(new Vector2(0, d2.y));
+                                success = TryMove(new Vector2(0, spd));
+                                //(d2.y / Mathf.Abs(d2.y))
                             }
                         }
 
