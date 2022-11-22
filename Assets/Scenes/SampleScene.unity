@@ -5127,9 +5127,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2131701931437817402, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315875555449574346, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339729451417357932, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 7906190198111546195, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426295307555555330, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+      propertyPath: DaggerAtk
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8426295307555555330, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
       propertyPath: swordAttack

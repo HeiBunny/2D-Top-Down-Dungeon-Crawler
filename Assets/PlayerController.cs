@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     bool canMove = true;
+    public int numWeapon;
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        numWeapon = 1;
     }
 
 
@@ -83,13 +85,32 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("SwordAttack");
     }
 
-    public void SwordAttack(){
-        // LockMovement();
+    void OnToggleWeapon1(){
+        numWeapon = 1;
+        swordAttack.setDamage(3);
+    }
+    void OnToggleWeapon2(){
+        numWeapon = 2;
+        swordAttack.setDamage(1);
+    }
 
-        if(spriteRenderer.flipX == true){
-            swordAttack.AttackLeft();
-        }else{
-            swordAttack.AttackRight();
+    public void SwordAttack(){
+        if(numWeapon == 1){
+            LockMovement();
+
+            if(spriteRenderer.flipX == true){
+                swordAttack.AttackLeft();
+            }else{
+                swordAttack.AttackRight();
+            }
+        }
+        if(numWeapon == 2){
+
+            if(spriteRenderer.flipX == true){
+                swordAttack.AttackLeft();
+            }else{
+                swordAttack.AttackRight();
+            }
         }
     }
 
@@ -104,4 +125,5 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement(){
         canMove = true;
     }
+
 }

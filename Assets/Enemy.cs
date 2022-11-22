@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 
     
     public float moveSpeed = .05f;
-    public float health = 1;
+    public float health = 2;
     Animator animator;
     public Vector2 target, movement;
     public Transform player; 
@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     }
     private void FixedUpdate(){
         Vector2 d2 = player.transform.position - transform.position;
+        
         float spd = Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y);
         if(Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) > 0.2 && Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) < 1.2){
             if(d2 != Vector2.zero){
