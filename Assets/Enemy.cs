@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 
     
     public float moveSpeed = .05f;
+    public float maxHealth = 2;
     public float health = 2;
     Animator animator;
     public Vector2 target, movement;
@@ -92,14 +93,22 @@ public class Enemy : MonoBehaviour
         }
     }
 
-   
+    public float getHealth(){
+        float a = health/maxHealth;
+        if(a >= 0){
+            return(a);
+        }else{
+            return 0;
+        }
+        
+    }
  
     public void Defeated(){
-       animator.SetTrigger("Defeated");
+        animator.SetTrigger("Defeated");
     }
 
     public void RemoveEnemy(){
-         Destroy(gameObject);
+        Destroy(gameObject);
     }
 
 
