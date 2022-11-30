@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
     public swordAttack swordAttack;
+    public float health = 1f;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
@@ -29,30 +30,37 @@ public class PlayerController : MonoBehaviour
 
 
     private void FixedUpdate() {
-        if(canMove){
-            if(movementInput != Vector2.zero){
-                        bool success = TryMove(movementInput);
+        if(gameObject != null){
+            if(canMove){
+                if(movementInput != Vector2.zero){
+                            bool success = TryMove(movementInput);
 
-                        if(!success && movementInput.x != 0){
-                            success = TryMove(new Vector2(movementInput.x, 0));
+                            if(!success && movementInput.x != 0){
+                                success = TryMove(new Vector2(movementInput.x, 0));
 
-                            if(!success){
-                                success = TryMove(new Vector2(0, movementInput.y));
+                                if(!success){
+                                    success = TryMove(new Vector2(0, movementInput.y));
+                                }
                             }
+
+                            animator.SetBool("isMoving", success);
+                        }else{
+                            animator.SetBool("isMoving", false);
                         }
 
-                        animator.SetBool("isMoving", success);
-                    }else{
-                        animator.SetBool("isMoving", false);
+                        //set direction of sprite to movement direction
+                        if(movementInput.x < 0){
+                            spriteRenderer.flipX = true;
+                        }else if(movementInput.x > 0){
+                            spriteRenderer.flipX = false;
+                        }
                     }
 
-                    //set direction of sprite to movement direction
-                    if(movementInput.x < 0){
-                        spriteRenderer.flipX = true;
-                    }else if(movementInput.x > 0){
-                        spriteRenderer.flipX = false;
-                    }
-                }
+            if(health <= 0){
+                Destroy(gameObject); //probably don't destroy but this is temp
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+        }   
     }
         private bool TryMove(Vector2 direction){
             if(direction != Vector2.zero){
