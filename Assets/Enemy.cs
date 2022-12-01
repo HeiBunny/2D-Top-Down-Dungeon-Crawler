@@ -10,8 +10,8 @@ public class Enemy : MonoBehaviour
     public float maxHealth = 2;
     public float health = 2;
     Animator animator;
-    public Vector2 target, movement;
-    public Transform player; 
+    public Vector2 movement;
+    private Transform playerTransform; 
     Rigidbody2D rb;
     SpriteRenderer sr;
 
@@ -25,16 +25,19 @@ public class Enemy : MonoBehaviour
             animator = GetComponent<Animator>();
             rb = this.GetComponent<Rigidbody2D>();
             sr = GetComponent<SpriteRenderer>();
+            
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
         
         }
     void Update(){
-        Vector2 direction = player.transform.position - transform.position;
+        Vector2 direction = playerTransform.transform.position - transform.position;
         direction.Normalize();
         movement = direction;
         
     }
     private void FixedUpdate(){
-        Vector2 d2 = player.transform.position - transform.position;
+        Vector2 d2 = playerTransform.transform.position - transform.position;
         
         float spd = Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y);
         if(Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) > 0.2 && Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) < 1.2){

@@ -325,9 +325,8 @@ MonoBehaviour:
   moveSpeed: 0.25
   maxHealth: 2
   health: 2
-  target: {x: 0, y: 0}
   movement: {x: 0, y: 0}
-  player: {fileID: 75230473663529049, guid: e2780d40de6f146c082721ed79ff6697, type: 3}
+  player: {fileID: 0}
   collisionOffset: 0.05
   movementFilter:
     useTriggers: 0

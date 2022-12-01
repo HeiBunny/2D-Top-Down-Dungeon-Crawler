@@ -11,13 +11,13 @@ public class Spawner : MonoBehaviour
     {
         spawnTime = 0;
         spawnDelay = 1;
-        InvokeRepeating("spawn", spawnTime, spawnDelay);
-        
+        //InvokeRepeating("spawn", spawnTime, spawnDelay);
+        spawn();
     }
 
     // Update is called once per frame
     void spawn()
     {
-        Instantiate(Enemies[0], new Vector2(1, 1), Quaternion.identity);
+        Instantiate(Enemies[0], new Vector2(0.5f, 0.4f), Quaternion.identity);
     }
 }
