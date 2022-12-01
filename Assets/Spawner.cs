@@ -5,19 +5,34 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Enemy[] Enemies;
-    public float spawnTime, spawnDelay;
-    // Start is called before the first frame update
+    public float spawnTime, spawnDelay, count;
+    
     void Start()
     {
-        spawnTime = 0;
-        spawnDelay = 1;
-        //InvokeRepeating("spawn", spawnTime, spawnDelay);
+        spawnTime = 5;
+        spawnDelay = 5;
+        InvokeRepeating("spawn", spawnTime, spawnDelay);
         spawn();
+        count = 1;
     }
 
-    // Update is called once per frame
     void spawn()
     {
-        Instantiate(Enemies[0], new Vector2(0.5f, 0.4f), Quaternion.identity);
+        if(count == 0){
+            Instantiate(Enemies[0], new Vector2(-0.05f, -0.65f), Quaternion.identity);
+            count ++;
+        }
+        else if(count == 1){
+            Instantiate(Enemies[0], new Vector2(-1.15f, 0.67f), Quaternion.identity);
+            count ++;
+        }
+        else if(count == 2){
+            Instantiate(Enemies[0], new Vector2(0.8f, 0.955f), Quaternion.identity);
+            count ++;
+        }
+        else if(count == 3){
+            Instantiate(Enemies[0], new Vector2(1.23f, 0.2f), Quaternion.identity);
+            count = 0;
+        }
     }
 }
