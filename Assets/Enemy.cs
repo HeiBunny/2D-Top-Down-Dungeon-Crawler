@@ -64,6 +64,34 @@ public class Enemy : MonoBehaviour
         }
         
     }
+<<<<<<< Updated upstream
+=======
+
+    public void AttackEnemy(Vector2 originalPos){
+        float timeElapsed = 0;
+        while(timeElapsed < duration){
+            sr.transform.position = Vector2.Lerp(sr.transform.position, player.transform.position, attackSpeed);
+            //Lerp may be speeding up if sr.position is constantly updating
+            //fix attack speed
+            //player position is being locked to first recorded player position
+            //essentially having issues with anchoring certain locations and constantly updating others
+            timeElapsed += Time.deltaTime;
+        }
+        if(sr.transform.position == player.transform.position){
+            sr.transform.position = originalPos;
+        } 
+    }
+  private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Player"){
+            //deal damage
+            PlayerController player = other.GetComponent<PlayerController>();
+            if(player != null){
+                player.health -= damage;
+            }
+        }
+  }
+    
+>>>>>>> Stashed changes
     private bool TryMove(Vector2 direction){
         if(direction != Vector2.zero){
                
