@@ -8,7 +8,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream
   - component: {fileID: 709779414619456150}
   - component: {fileID: 3895464865132105969}
   - component: {fileID: 3221279104605107191}
@@ -198,16 +197,6 @@ GameObject:
   - component: {fileID: 5550240114408852693}
   - component: {fileID: 690625897596251490}
   - component: {fileID: 4983411734060301350}
-=======
-  - component: {fileID: 6740439114238889235}
-  - component: {fileID: 966696165087771405}
-  - component: {fileID: 6730212180339883409}
-  - component: {fileID: 2055974847482853556}
-  - component: {fileID: 6348874090983725315}
-  - component: {fileID: 5185034344672432075}
-  - component: {fileID: 1488018911583635527}
-  - component: {fileID: 4329720607697430635}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -373,19 +362,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &4329720607697430635
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4506196620959618254}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00000011920929, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.2753104
