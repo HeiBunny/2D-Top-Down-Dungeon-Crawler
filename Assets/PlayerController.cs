@@ -130,16 +130,13 @@ public class PlayerController : MonoBehaviour
 
     public float Health
     {
-        set
-        {
+        set {
             health = value;
-            if (health <= 0)
-            {
+            if (health <= 0) {
                 Dead();
             }
         }
-        get
-        {
+        get {
             return health;
         }
     }
