@@ -39,5 +39,9 @@ public class SwordAttack : MonoBehaviour
             }
         }
     }
+
+    public void setDamage(float d){
+        damage = d;
+    }
     
 }
