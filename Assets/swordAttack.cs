@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordAttack : MonoBehaviour
+public class swordAttack : MonoBehaviour
 {
     public Collider2D swordCollider; 
     Vector2 rightAttackOffset;
