@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public float health = 10;
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
@@ -125,5 +127,27 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement(){
         canMove = true;
     }
+
+    public float Health
+    {
+        set
+        {
+            health = value;
+            if (health <= 0)
+            {
+                Dead();
+            }
+        }
+        get
+        {
+            return health;
+        }
+    }
+
+    public void Dead()
+    {
+        animator.SetTrigger("Defeated");
+    }
+
 
 }

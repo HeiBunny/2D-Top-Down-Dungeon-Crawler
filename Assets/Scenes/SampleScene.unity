@@ -5101,8 +5101,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 992279126475834761, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.081692986
+      objectReference: {fileID: 0}
+    - target: {fileID: 992279126475834761, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.011105567
+      objectReference: {fileID: 0}
+    - target: {fileID: 992279126475834761, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 992279126475834761, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0024347492
+      objectReference: {fileID: 0}
+    - target: {fileID: 992279126475834761, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.15972407
+      objectReference: {fileID: 0}
+    - target: {fileID: 992279126475834761, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1285318048080035935, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
       propertyPath: m_Name
