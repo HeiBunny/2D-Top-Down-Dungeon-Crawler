@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
     public swordAttack swordAttack;
+    public bool isDead = false;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
 
     private void FixedUpdate() {
-        if(canMove){
+        if(canMove && isDead == false){
             if(movementInput != Vector2.zero){
                         bool success = TryMove(movementInput);
 
@@ -147,7 +148,12 @@ public class PlayerController : MonoBehaviour
 
     public void Dead()
     {
-        // animator.SetTrigger("Defeated");
+        isDead = true;
+        animator.SetBool("Dead", true);
+    }
+
+    public void RemovePlayer(){
+        Destroy(gameObject);
     }
 
     public float getHealth()
