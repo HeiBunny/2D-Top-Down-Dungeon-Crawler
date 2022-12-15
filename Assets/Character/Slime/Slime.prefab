@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3221279104605107191}
   m_Layer: 0
   m_Name: Green
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 9137802991662285591}
   m_Layer: 0
   m_Name: Red
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,9 +322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3fe7555143a4e46a2748fd2c509671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  capCollider: {fileID: 0}
   moveSpeed: 0.25
   maxHealth: 2
   health: 2
+  damage: 2
   movement: {x: 0, y: 0}
   collisionOffset: 0.05
   movementFilter:
