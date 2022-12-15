@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = .05f;
     public float maxHealth = 2;
     public float health = 2;
+    public float damage = 2;
     Animator animator;
     public Vector2 movement;
     private Transform playerTransform; 
@@ -114,6 +115,20 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            PlayerController player = other.GetComponent<PlayerController>();
 
+            if (player != null)
+            {
+                player.Health -= damage;
+            }
+        }
+    }
 
 }
+
