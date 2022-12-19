@@ -5050,11 +5050,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1806420720 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1285318048080035935, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
+--- !u!114 &1806420721 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8426295307555555330, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
   m_PrefabInstance: {fileID: 8695585774168984429}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0cfc87cc5d94145b218efc640dd8b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1989801715
 GameObject:
   m_ObjectHideFlags: 0
@@ -5154,6 +5160,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2348918904496117638, guid: d6f366c4356ad4ffb9c19db2cd6297d9, type: 3}
+      propertyPath: interactKey
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348918904496117638, guid: d6f366c4356ad4ffb9c19db2cd6297d9, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2015204390}
@@ -5181,7 +5191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49e633e3f9a14f6c855677ec5c2adae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1806420720}
+  player: {fileID: 1806420721}
   isOpen: 0
 --- !u!1001 &8695585774168984429
 PrefabInstance:
