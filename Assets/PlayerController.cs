@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     bool canMove = true;
+    bool unlockedTwo;
     public int numWeapon;
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         numWeapon = 1;
+        unlockedTwo = false;
     }
 
 
@@ -94,8 +96,11 @@ public class PlayerController : MonoBehaviour
         swordAttack.setDamage(3);
     }
     void OnToggleWeapon2(){
-        numWeapon = 2;
-        swordAttack.setDamage(1);
+        if(unlockedTwo == true){
+            numWeapon = 2;
+            swordAttack.setDamage(1);
+        }
+        
     }
 
     public void SwordAttack(){
@@ -128,6 +133,10 @@ public class PlayerController : MonoBehaviour
     }
     public void UnlockMovement(){
         canMove = true;
+    }
+    
+    public void setU2(){
+        unlockedTwo = true;
     }
 
     public float Health
