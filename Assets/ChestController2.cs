@@ -26,7 +26,7 @@ public class ChestController2 : MonoBehaviour
     public void openChest(){
         if (isOpen == false){
             isOpen = true;
-            print("The Chest Is Open!");
+            // print("The Chest Is Open!");
             animator.SetBool("IsOpen", isOpen);
             player.setU2();
         }
@@ -38,4 +38,9 @@ public class ChestController2 : MonoBehaviour
         animator.SetBool("IsOpen", isOpen);
         
     }
+
+    public bool getIsOpen(){
+        return isOpen;
+    }
+    
 }
