@@ -28,13 +28,13 @@ public class Interactables : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Player"){
             isInRange = true;
-            print("Player is in range");
+            // print("Player is in range");
         }
     }
     private void OnTriggerExit2D(Collider2D other){
         if(other.tag == "Player"){
             isInRange = false;
-            print("Player is not in range");
+            // print("Player is not in range");
         }
     }
 }
