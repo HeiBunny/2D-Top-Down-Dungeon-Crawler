@@ -29,13 +29,6 @@ public class ChestController2 : MonoBehaviour
             // print("The Chest Is Open!");
             animator.SetBool("IsOpen", isOpen);
             player.setU2();
-                
-                System.Console.WriteLine("Wait start");
-                print("hi");
-                System.Threading.Thread.Sleep(5000);
-                System.Console.WriteLine("Wait start");
-
-            // ChestController2.Destroy;
             
         }
 
@@ -49,6 +42,10 @@ public class ChestController2 : MonoBehaviour
 
     public bool getIsOpen(){
         return isOpen;
+    }
+
+    public void destroyChest(){
+        Destroy(gameObject);
     }
     
 }
