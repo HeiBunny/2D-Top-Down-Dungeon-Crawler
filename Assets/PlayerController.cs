@@ -61,6 +61,13 @@ public class PlayerController : MonoBehaviour
                         spriteRenderer.flipX = false;
                     }
                 }
+        if(numWeapon == 1){
+            animator.SetInteger("numWeapon", 1);
+        }
+        if(numWeapon == 2){
+            animator.SetInteger("numWeapon", 2);
+        }
+        
     }
         private bool TryMove(Vector2 direction){
             if(direction != Vector2.zero){
