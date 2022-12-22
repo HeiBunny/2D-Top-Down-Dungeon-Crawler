@@ -168,12 +168,9 @@ public class PlayerController : MonoBehaviour
     public float getHealth()
     {
         float a = health / maxHealth;
-        if (a >= 0)
-        {
+        if (a >= 0){
             return (a);
-        }
-        else
-        {
+        }else{
             return 0;
         }
 

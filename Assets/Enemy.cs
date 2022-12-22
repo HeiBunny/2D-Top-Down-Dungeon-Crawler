@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     private Transform playerTransform; 
     Rigidbody2D rb;
     SpriteRenderer sr;
+    public static int numKilled;
+    public bool isJerry = false;
 
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
@@ -23,14 +25,16 @@ public class Enemy : MonoBehaviour
 
 
     private void Start(){
-            animator = GetComponent<Animator>();
-            rb = this.GetComponent<Rigidbody2D>();
-            sr = GetComponent<SpriteRenderer>();
-            
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-
-        
+        animator = GetComponent<Animator>();
+        rb = this.GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        if(isJerry){
+            numKilled = 0;
         }
+    
+    }
+    
     void Update(){
         Vector2 direction = playerTransform.transform.position - transform.position;
         direction.Normalize();
@@ -112,6 +116,8 @@ public class Enemy : MonoBehaviour
     }
 
     public void RemoveEnemy(){
+        numKilled ++;
+        print(numKilled);
         Destroy(gameObject);
     }
 
@@ -128,6 +134,9 @@ public class Enemy : MonoBehaviour
                 player.Health -= damage;
             }
         }
+    }
+    public int getNK(){
+        return numKilled;
     }
 
 }

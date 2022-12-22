@@ -4953,6 +4953,8 @@ MonoBehaviour:
   spawnTime: 0
   spawnDelay: 0
   count: 0
+  enemy: {fileID: 690625897596251490, guid: eb5fcc00e251c4c378b22e09ca4f1cc7, type: 3}
+  canSpawn: 1
 --- !u!4 &1573790673
 Transform:
   m_ObjectHideFlags: 0
@@ -4979,6 +4981,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1139714995}
+    - target: {fileID: 690625897596251490, guid: eb5fcc00e251c4c378b22e09ca4f1cc7, type: 3}
+      propertyPath: isJerry
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 866092353691548018, guid: eb5fcc00e251c4c378b22e09ca4f1cc7, type: 3}
       propertyPath: m_RootOrder
       value: 5
