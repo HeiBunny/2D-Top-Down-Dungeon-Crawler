@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     public static int numKilled;
     public bool isJerry = false;
 
+
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
 
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour
         if(isJerry){
             numKilled = 0;
         }
+        
     
     }
     
@@ -67,6 +69,9 @@ public class Enemy : MonoBehaviour
         if(d2.x > 0){
             sr.flipX = false; 
         }
+        // if(numKilled >= 5){
+            
+        // }
         
     }
     private bool TryMove(Vector2 direction){
