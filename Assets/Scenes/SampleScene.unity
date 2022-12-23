@@ -487,6 +487,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isChestText: 0
+--- !u!114 &610980219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3511468301931322843, guid: 4a0c6056fba0d44149eaa6f5315cfcf8, type: 3}
+  m_PrefabInstance: {fileID: 4434449453697149295}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610980212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950f138ea9e49478ea2465159b4b1c68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &649454145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950f138ea9e49478ea2465159b4b1c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isChestText: 0
+  isChestText: 1
 --- !u!4 &1139714995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2085198439277861942, guid: 7c9510733ee27404f96a647163fbb80a, type: 3}
@@ -5297,7 +5308,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.05}
-  m_Size: {x: 0.4, y: 0.6}
+  m_Size: {x: 0.5, y: 0.75}
   m_Direction: 0
 --- !u!114 &1806420721 stripped
 MonoBehaviour:
@@ -5409,6 +5420,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2348918904496117638, guid: d6f366c4356ad4ffb9c19db2cd6297d9, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 1111773266}
+    - target: {fileID: 2348918904496117638, guid: d6f366c4356ad4ffb9c19db2cd6297d9, type: 3}
       propertyPath: interactKey
       value: 102
       objectReference: {fileID: 0}
@@ -5419,6 +5434,10 @@ PrefabInstance:
     - target: {fileID: 5300792032713100920, guid: d6f366c4356ad4ffb9c19db2cd6297d9, type: 3}
       propertyPath: m_Name
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175921329769539465, guid: d6f366c4356ad4ffb9c19db2cd6297d9, type: 3}
+      propertyPath: m_Radius
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7408823940326361866, guid: d6f366c4356ad4ffb9c19db2cd6297d9, type: 3}
@@ -5538,6 +5557,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8206150272068494036, guid: 4a0c6056fba0d44149eaa6f5315cfcf8, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 610980219}
     - target: {fileID: 8206150272068494036, guid: 4a0c6056fba0d44149eaa6f5315cfcf8, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

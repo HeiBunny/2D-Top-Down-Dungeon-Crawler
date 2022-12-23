@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     bool canMove = true;
-    bool unlockedTwo;
+    bool unlockedTwo, isActivated;
     public int numWeapon;
 
 
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         numWeapon = 1;
         unlockedTwo = false;
+        isActivated = false;
     }
 
 
@@ -66,10 +67,12 @@ public class PlayerController : MonoBehaviour
             }
         }
         int b = enemy.getNK();
-        if(b >= 5){
+        if(b >= 10 && isActivated == false){
             pc.Activate();
+            isActivated = true;
         }
     }
+
         private bool TryMove(Vector2 direction){
             if(direction != Vector2.zero){
                

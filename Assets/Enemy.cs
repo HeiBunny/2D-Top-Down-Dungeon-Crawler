@@ -69,9 +69,9 @@ public class Enemy : MonoBehaviour
         if(d2.x > 0){
             sr.flipX = false; 
         }
-        // if(numKilled >= 5){
-            
-        // }
+        if(numKilled >= 10){
+            Defeated();
+        }
         
     }
     private bool TryMove(Vector2 direction){

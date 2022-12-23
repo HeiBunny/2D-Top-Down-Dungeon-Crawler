@@ -8,11 +8,14 @@ public class Interactables : MonoBehaviour
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
+
+    public TextCon text;
+    private bool isActive;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        isActive = true;
     }
 
     // Update is called once per frame
@@ -22,7 +25,18 @@ public class Interactables : MonoBehaviour
             if(Input.GetKeyDown(interactKey)){
                 interactAction.Invoke();
             }
+            if(isActive == false && text != null){
+                text.Activate();
+                isActive = true;
+            }
         }
+        else{
+            if(isActive == true&& text != null){
+                text.DeActivate();
+                isActive = false;
+            }
+        }
+        
     }
     
     private void OnTriggerEnter2D(Collider2D other){
