@@ -5,6 +5,8 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     public Enemy enmi;
+
+    
     public float num; 
     void Start()
 

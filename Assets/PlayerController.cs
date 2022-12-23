@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
-
     public float health = 10;
     public float maxHealth = 10;
     public float moveSpeed = 1f;
@@ -15,8 +14,6 @@ public class PlayerController : MonoBehaviour
     public ContactFilter2D movementFilter;
     public swordAttack swordAttack;
     public bool isDead = false;
-    public Enemy enemy;
-    public PortalController pc;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
@@ -25,7 +22,6 @@ public class PlayerController : MonoBehaviour
     bool canMove = true;
     bool unlockedTwo;
     public int numWeapon;
-
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
@@ -43,32 +39,35 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         if(canMove && isDead == false){
             if(movementInput != Vector2.zero){
-                bool success = TryMove(movementInput);
+                        bool success = TryMove(movementInput);
 
-                if(!success && movementInput.x > 0){
-                    success = TryMove(new Vector2(movementInput.x, 0));
+                        if(!success && movementInput.x > 0){
+                            success = TryMove(new Vector2(movementInput.x, 0));
 
-                    if(!success){
-                        success = TryMove(new Vector2(0, movementInput.y));
+                            if(!success){
+                                success = TryMove(new Vector2(0, movementInput.y));
+                            }
+                        }
+
+                        animator.SetBool("isMoving", success);
+                    }else{
+                        animator.SetBool("isMoving", false);
+                    }
+
+                    //set direction of sprite to movement direction
+                    if(movementInput.x < 0){
+                        spriteRenderer.flipX = true;
+                    }else if(movementInput.x > 0){
+                        spriteRenderer.flipX = false;
                     }
                 }
-
-                animator.SetBool("isMoving", success);
-            }else{
-                animator.SetBool("isMoving", false);
-            }
-
-            //set direction of sprite to movement direction
-            if(movementInput.x < 0){
-                spriteRenderer.flipX = true;
-            }else if(movementInput.x > 0){
-                spriteRenderer.flipX = false;
-            }
+        if(numWeapon == 1){
+            animator.SetInteger("numWeapon", 1);
         }
-        int b = enemy.getNK();
-        if(b >= 5){
-            pc.Activate();
+        if(numWeapon == 2){
+            animator.SetInteger("numWeapon", 2);
         }
+        
     }
         private bool TryMove(Vector2 direction){
             if(direction != Vector2.zero){
@@ -176,9 +175,12 @@ public class PlayerController : MonoBehaviour
     public float getHealth()
     {
         float a = health / maxHealth;
-        if (a >= 0){
+        if (a >= 0)
+        {
             return (a);
-        }else{
+        }
+        else
+        {
             return 0;
         }
 

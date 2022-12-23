@@ -8,6 +8,7 @@ public class PlayerHPBar : MonoBehaviour
     
     public float num; 
     void Start()
+
     {
         num = transform.localScale.x;
     }

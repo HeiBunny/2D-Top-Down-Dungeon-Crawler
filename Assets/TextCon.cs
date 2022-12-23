@@ -6,7 +6,6 @@ public class TextCon : MonoBehaviour
 {
     
     private float textY, aNum;
-    public bool isChestText = false;
     void Start()
     {
         textY = transform.position.y;
@@ -15,25 +14,20 @@ public class TextCon : MonoBehaviour
 
     void Update()
     {
-        if(isChestText){
-            float anothaNum = (aNum/Mathf.Abs(aNum)) * (textY + 0.03f - transform.position.y)/250;
-            if(transform.position.y < (textY + 0.03) && transform.position.y > (textY - 0.03)){
-                transform.position = new Vector2(transform.position.x, transform.position.y + aNum + anothaNum);
-            } 
-            else{
-                aNum = -1 * aNum;
-                anothaNum = -1 * anothaNum;
-                transform.position = new Vector2(transform.position.x, transform.position.y + aNum + anothaNum);
-            }
-        }
-         
-        if(isChestText){
-            if(GetComponentInParent<ChestController2>().getIsOpen() == true){
-                // print("The Chest is Open");
-                Destroy(gameObject);
-            }
+        float anothaNum = (aNum/Mathf.Abs(aNum)) * (textY + 0.03f - transform.position.y)/250;
+        if(transform.position.y < (textY + 0.03) && transform.position.y > (textY - 0.03)){
+            transform.position = new Vector2(transform.position.x, transform.position.y + aNum + anothaNum);
+        } 
+        else{
+            aNum = -1 * aNum;
+            anothaNum = -1 * anothaNum;
+            transform.position = new Vector2(transform.position.x, transform.position.y + aNum + anothaNum);
         }
         
+        if(GetComponentInParent<ChestController2>().getIsOpen() == true){
+            // print("The Chest is Open");
+            Destroy(gameObject);
+        }
         
     }
     
