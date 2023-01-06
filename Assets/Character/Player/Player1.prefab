@@ -237,6 +237,9 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 1709795130508585072}
+  isDead: 0
+  enemy: {fileID: 0}
+  pc: {fileID: 0}
   numWeapon: 0
 --- !u!50 &8303733891651153383
 Rigidbody2D:
@@ -266,7 +269,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285318048080035935}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

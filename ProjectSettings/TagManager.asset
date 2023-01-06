@@ -11,10 +11,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hitbox
   - Water
   - UI
-  - 
+  - Terrain
   - 
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Terrain
+    uniqueID: 4202359587
+    locked: 0
+  - name: Enemies
+    uniqueID: 2650403443
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
