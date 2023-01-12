@@ -71,6 +71,12 @@ public class PlayerController : MonoBehaviour
             pc.Activate();
             isActivated = true;
         }
+        if(numWeapon == 2){
+            animator.SetFloat("numWeapon", 2);
+        }
+        if(numWeapon == 1){
+            animator.SetFloat("numWeapon", 1);
+        }
     }
 
         private bool TryMove(Vector2 direction){
@@ -117,21 +123,14 @@ public class PlayerController : MonoBehaviour
     public void SwordAttack(){
         if(numWeapon == 1){
             LockMovement();
-
-            if(spriteRenderer.flipX == true){
-                swordAttack.AttackLeft();
-            }else{
-                swordAttack.AttackRight();
-            }
         }
-        if(numWeapon == 2){
 
-            if(spriteRenderer.flipX == true){
-                swordAttack.AttackLeft();
-            }else{
-                swordAttack.AttackRight();
-            }
+        if(spriteRenderer.flipX == true){
+            swordAttack.AttackLeft();
+        }else{
+            swordAttack.AttackRight();
         }
+        
     }
 
     public void EndSwordAttack(){
