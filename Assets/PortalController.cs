@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PortalController : MonoBehaviour
 {
     public Enemy enemy;
-    
+    private GameObject player, portal;
 
     void Start()
     {
@@ -23,12 +23,29 @@ public class PortalController : MonoBehaviour
         
     }
     public void ActivatePortal(){
+        player = GameObject.FindWithTag("Player");
+        portal = GameObject.FindWithTag("Portal");
         print("The Portal Has Been Opened!!");
-        SceneManager.LoadScene("DungeonScene");
-        Scene scene = SceneManager.GetSceneByName("DungeonScene");
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        SceneManager.MoveGameObjectToScene(player, scene);
-
+        DontDestroyOnLoad(player);
+        DontDestroyOnLoad(portal);
+        if(SceneManager.GetActiveScene().name == "GrassScene"){
+            Scene scene = SceneManager.GetSceneByName("DungeonScene");
+            SceneManager.LoadSceneAsync("DungeonScene");
+            SceneManager.MoveGameObjectToScene(player, scene);
+            SceneManager.MoveGameObjectToScene(portal, scene);
+        }
+        else if(SceneManager.GetActiveScene().name == "DungeonScene"){
+            Scene scene = SceneManager.GetSceneByName("GrassScene");
+            SceneManager.LoadSceneAsync("GrassScene");
+            SceneManager.MoveGameObjectToScene(player, scene);
+            SceneManager.MoveGameObjectToScene(portal, scene);
+        }
+        
+        
+        // SceneManager.SetActiveScene(SceneManager.GetSceneByName("DungeonScene"));
+        
+        
+    
     }
     public void Activate(){
         gameObject.SetActive(true);
