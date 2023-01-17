@@ -39,8 +39,6 @@ public class PlayerController : MonoBehaviour
         unlockedTwo = false;
         isActivated = false;
     }
-
-
     private void FixedUpdate() {
         if(canMove && isDead == false){
             if(movementInput != Vector2.zero){

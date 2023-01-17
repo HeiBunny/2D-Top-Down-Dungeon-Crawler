@@ -11,8 +11,8 @@ public class Enemy : MonoBehaviour
     public float health = 2;
     public float damage = 2;
     Animator animator;
-    public Vector2 movement;
-    private Transform playerTransform; 
+    public Vector2 target, movement;
+    public Transform player; 
     Rigidbody2D rb;
     SpriteRenderer sr;
     public static int numKilled;
@@ -29,25 +29,41 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        // player = GameObject.FindGameObjectWithTag("Player");
         if(isJerry){
             numKilled = 0;
         }
         
     
     }
+
+      
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Hitbox")
+        {
+            PlayerController player = FindObjectOfType<PlayerController>();
+
+            if (player != null)
+            {
+                player.Health -= damage;
+            }
+        }
+    }
     
     void Update(){
-        Vector2 direction = playerTransform.transform.position - transform.position;
+        Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
         movement = direction;
         
     }
     private void FixedUpdate(){
-        Vector2 d2 = playerTransform.transform.position - transform.position;
+        Vector2 d2 = player.transform.position - transform.position;
+        float playerHeight = player.GetComponent<SpriteRenderer>().bounds.size.y;
+        d2.y -= playerHeight/4;
         
         float spd = Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y);
-        if(Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) > 0.2 && Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) < 1.2){
+        if(Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) > 0.1 && Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) < 1.2){
             if(d2 != Vector2.zero){
                         bool success = TryMove(d2);
 
@@ -125,24 +141,22 @@ public class Enemy : MonoBehaviour
         print(numKilled);
         Destroy(gameObject);
     }
-
-    
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            PlayerController player = other.GetComponent<PlayerController>();
-
-            if (player != null)
-            {
-                player.Health -= damage;
-            }
-        }
-    }
+      
     public int getNK(){
         return numKilled;
     }
 
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.tag == "Player")
+    //     {
+    //         PlayerController player = other.GetComponent<PlayerController>();
+
+    //         if (player != null)
+    //         {
+    //             player.Health -= damage;
+    //         }
+    //     }
+    // }
 }
 
