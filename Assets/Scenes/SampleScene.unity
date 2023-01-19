@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 125129662}
   - component: {fileID: 125129661}
   - component: {fileID: 125129660}
+  - component: {fileID: 125129663}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -268,6 +269,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &125129663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125129659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c04204970b1640da9f5e989c4a0e875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1001 &169278682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -321,7 +335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3977409077916474975, guid: 000b21ab0fcab441b8086d3d8afcb161, type: 3}
       propertyPath: interactKey
-      value: 32
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 3977409077916474975, guid: 000b21ab0fcab441b8086d3d8afcb161, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size

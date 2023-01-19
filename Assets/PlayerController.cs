@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         int b = enemy.getNK();
-        if(b >= 10 && isActivated == false){
+        if(b >= 1 && isActivated == false){
             pc.Activate();
             isActivated = true;
         }
