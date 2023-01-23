@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    //Rigidbody of Player (not Hitbox) is preventing upward movement by slimes, not sure why
+    //Tried changing kinematic rigidbody, didn't change, tried changing layer matrix, didn't work
 
 
     public float health = 10;

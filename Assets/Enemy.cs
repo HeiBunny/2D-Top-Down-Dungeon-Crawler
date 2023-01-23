@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = this.GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        // player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         if(isJerry){
             numKilled = 0;
         }
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
     }
     
     void Update(){
-        Vector2 direction = player.transform.position - transform.position;
+        Vector2 direction = player.position - transform.position;
         direction.Normalize();
         movement = direction;
         
@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate(){
         Vector2 d2 = player.transform.position - transform.position;
         float playerHeight = player.GetComponent<SpriteRenderer>().bounds.size.y;
-        d2.y -= playerHeight/4;
+        d2.y -= playerHeight/8;
         
         float spd = Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y);
         if(Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) > 0.1 && Mathf.Sqrt(d2.x * d2.x + d2.y * d2.y) < 1.2){

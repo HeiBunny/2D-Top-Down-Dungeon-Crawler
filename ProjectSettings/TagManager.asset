@@ -3,17 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Weapon
+  - Portal
+  - Enemy
+  - Hitbox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Hitbox
+  - Enemy
+  - Player
   - 
   - 
   - 
