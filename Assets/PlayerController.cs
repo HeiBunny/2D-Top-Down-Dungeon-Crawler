@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     bool canMove = true;
     bool unlockedTwo, isActivated;
-    public int numWeapon;
+    public int numWeapon, numCoins;
 
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         numWeapon = 1;
         unlockedTwo = false;
         isActivated = false;
+        numCoins = 0;
     }
 
 
@@ -185,6 +186,11 @@ public class PlayerController : MonoBehaviour
             return 0;
         }
 
+    }
+
+    public void CoinCollected(){
+        numCoins++;
+        print("Coin Count: " + numCoins);
     }
 
 

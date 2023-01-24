@@ -122,7 +122,7 @@ public class Enemy : MonoBehaviour
 
     public void RemoveEnemy(){
         numKilled ++;
-        print(numKilled);
+        print("Slimes Killed: " + numKilled);
         Destroy(gameObject);
     }
 

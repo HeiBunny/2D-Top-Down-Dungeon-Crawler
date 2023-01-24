@@ -31,7 +31,7 @@ public class PortalController : MonoBehaviour
     public void ActivatePortal(){
         player = GameObject.FindWithTag("Player");
         portal = GameObject.FindWithTag("Portal");
-        print("The Portal Has Been Opened!!");
+        // print("The Portal Has Been Opened!!");
         DontDestroyOnLoad(player);
         DontDestroyOnLoad(portal);
         if(SceneManager.GetActiveScene().name == "SampleScene"){
@@ -116,14 +116,14 @@ public class PortalController : MonoBehaviour
     void OnEnable(){
         if(isGoingToSC == true){
             SceneManager.sceneLoaded += OnSceneLoaded;
-            print("你好");
+            // print("你好");
         }
-        print("Hu tao");
+        // print("Hu tao");
     }
 
     void OnDisable(){
         if(isGoingToSC == true){
-            print("ni hao");
+            // print("ni hao");
         }
         SceneManager.sceneLoaded -= OnSceneLoaded;
         // isGoingToSC = false;
