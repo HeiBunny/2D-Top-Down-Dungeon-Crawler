@@ -1,0 +1,22 @@
+using UnityEngine;
+
+public class TrailingSlime : Slime
+{
+    // Public variable to hold the prefab for the trail
+    public GameObject trailPrefab;
+
+    // Private variable to hold a reference to the trail game object
+    private GameObject trail;
+
+    private void Start()
+    {
+        // Instantiate the trail prefab and set it as a child of the slime game object
+        trail = Instantiate(trailPrefab, transform.position, Quaternion.identity, transform);
+    }
+
+    private void Update()
+    {
+        // Set the position of the trail game object to be the same as the position of the slime game object
+        trail.transform.position = transform.position;
+    }
+}

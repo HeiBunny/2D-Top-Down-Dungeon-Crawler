@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 8303733891651153383}
   - component: {fileID: 992279126475834761}
   - component: {fileID: 7740732288268637200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -237,6 +237,9 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 1709795130508585072}
+  isDead: 0
+  enemy: {fileID: 0}
+  pc: {fileID: 0}
   numWeapon: 0
 --- !u!50 &8303733891651153383
 Rigidbody2D:
