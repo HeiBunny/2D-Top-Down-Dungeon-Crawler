@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     public bool isJerry = false;
 
 
+
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
 
@@ -43,7 +44,6 @@ public class Enemy : MonoBehaviour
         if (other.tag == "Hitbox")
         {
             PlayerController player = FindObjectOfType<PlayerController>();
-
             if (player != null)
             {
                 player.Health -= damage;
@@ -88,6 +88,7 @@ public class Enemy : MonoBehaviour
         if(numKilled >= 10){
             Defeated();
         }
+        
         
     }
     private bool TryMove(Vector2 direction){
@@ -145,18 +146,5 @@ public class Enemy : MonoBehaviour
     public int getNK(){
         return numKilled;
     }
-
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.tag == "Player")
-    //     {
-    //         PlayerController player = other.GetComponent<PlayerController>();
-
-    //         if (player != null)
-    //         {
-    //             player.Health -= damage;
-    //         }
-    //     }
-    // }
 }
 
