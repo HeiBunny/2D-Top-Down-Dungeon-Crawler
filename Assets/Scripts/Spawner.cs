@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour
     }
     void Update(){
         int nk = enemy.getNK();
-        if(nk >= 10){
+        if(nk >= 2){
             canSpawn = false;
             // print("10 slimes killed");
         }

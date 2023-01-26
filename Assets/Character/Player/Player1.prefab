@@ -237,6 +237,9 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 1709795130508585072}
+  isDead: 0
+  enemy: {fileID: 0}
+  pc: {fileID: 0}
   numWeapon: 0
 --- !u!50 &8303733891651153383
 Rigidbody2D:

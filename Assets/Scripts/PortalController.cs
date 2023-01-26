@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PortalController : MonoBehaviour
 {
     public Enemy enemy;
-    private GameObject player, portal;
+    private GameObject player, portal, camera;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class PortalController : MonoBehaviour
     private void FixedUpdate()
     {
         int b = enemy.getNK();
-        if(b < 5 && gameObject.activeSelf == true){
+        if(b < 2 && gameObject.activeSelf == true){
             gameObject.SetActive(false);
         }
         
@@ -25,20 +25,26 @@ public class PortalController : MonoBehaviour
     public void ActivatePortal(){
         player = GameObject.FindWithTag("Player");
         portal = GameObject.FindWithTag("Portal");
+        camera = GameObject.FindWithTag("MainCamera");
+
         print("The Portal Has Been Opened!!");
         DontDestroyOnLoad(player);
         DontDestroyOnLoad(portal);
+        DontDestroyOnLoad(camera);
+
         if(SceneManager.GetActiveScene().name == "GrassScene"){
             Scene scene = SceneManager.GetSceneByName("DungeonScene");
             SceneManager.LoadSceneAsync("DungeonScene");
             SceneManager.MoveGameObjectToScene(player, scene);
             SceneManager.MoveGameObjectToScene(portal, scene);
+            SceneManager.MoveGameObjectToScene(camera, scene);
         }
         else if(SceneManager.GetActiveScene().name == "DungeonScene"){
             Scene scene = SceneManager.GetSceneByName("GrassScene");
             SceneManager.LoadSceneAsync("GrassScene");
             SceneManager.MoveGameObjectToScene(player, scene);
             SceneManager.MoveGameObjectToScene(portal, scene);
+            SceneManager.MoveGameObjectToScene(camera, scene);
         }
         
         
