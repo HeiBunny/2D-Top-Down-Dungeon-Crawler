@@ -1,0 +1,21 @@
+using UnityEngine;
+
+public class TrailDamage : MonoBehaviour
+{
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if the collider belongs to the player
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.tag == "Hitbox")
+            {
+                PlayerController player = other.GetComponent<PlayerController>();
+
+                if (player != null)
+                {
+                    player.Health -= damage;
+                }
+            }
+        }
+    }
+}

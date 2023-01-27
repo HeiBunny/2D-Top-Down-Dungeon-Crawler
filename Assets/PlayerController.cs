@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    //Rigidbody of Player (not Hitbox) is preventing upward movement by slimes, not sure why
+    //Tried changing kinematic rigidbody, didn't change, tried changing layer matrix, didn't work
+
+    //invicibility frames isnt working, maybe delay between communication between Enemy OnCollision and player.Heallth?
 
 
     public float health = 10;
@@ -25,6 +29,9 @@ public class PlayerController : MonoBehaviour
     bool canMove = true;
     bool unlockedTwo, isActivated;
     public int numWeapon, numCoins;
+    public bool canTakeDamage = true;
+    public float frames;
+    public float invFrames = 1;
 
 
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
@@ -40,9 +47,13 @@ public class PlayerController : MonoBehaviour
         isActivated = false;
         numCoins = 0;
     }
-
-
     private void FixedUpdate() {
+        frames++;
+        print(frames);
+        if(frames >= invFrames){
+            canTakeDamage = true;
+        }
+
         if(canMove && isDead == false){
             if(movementInput != Vector2.zero){
                 bool success = TryMove(movementInput);
@@ -72,6 +83,7 @@ public class PlayerController : MonoBehaviour
             pc.Activate();
             isActivated = true;
         }
+        
     }
 
         private bool TryMove(Vector2 direction){
@@ -153,11 +165,16 @@ public class PlayerController : MonoBehaviour
     {
         set
         {
-            health = value;
-            if (health <= 0)
-            {
-                Dead();
+            if(canTakeDamage){
+                health = value;
+                canTakeDamage = false;
+                frames = 0;
+                if (health <= 0)
+                {
+                    Dead();
+                }
             }
+            
         }
         get
         {
