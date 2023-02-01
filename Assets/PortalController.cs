@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PortalController : MonoBehaviour
 {
     public Enemy enemy;
-    private GameObject player, portal;
+    private GameObject player, portal, camera;
     private Scene LKnGrassScene, LKnDungScene;
 
     private bool isGoingToSC;
@@ -31,9 +31,11 @@ public class PortalController : MonoBehaviour
     public void ActivatePortal(){
         player = GameObject.FindWithTag("Player");
         portal = GameObject.FindWithTag("Portal");
+        camera = GameObject.FindWithTag("MainCamera");
         // print("The Portal Has Been Opened!!");
         DontDestroyOnLoad(player);
         DontDestroyOnLoad(portal);
+        DontDestroyOnLoad(camera);
         if(SceneManager.GetActiveScene().name == "SampleScene"){
             // LKnGrassScene = SceneManager.GetActiveScene();
             // AddSceneToBS();
@@ -42,6 +44,7 @@ public class PortalController : MonoBehaviour
             SceneManager.LoadSceneAsync("DungeonScene");
             SceneManager.MoveGameObjectToScene(player, scene);
             SceneManager.MoveGameObjectToScene(portal, scene);
+            SceneManager.MoveGameObjectToScene(camera, scene);
         }
         else if(SceneManager.GetActiveScene().name == "DungeonScene"){
             Scene scene = SceneManager.GetSceneByName("GrassScene");
@@ -55,6 +58,7 @@ public class PortalController : MonoBehaviour
             
             SceneManager.MoveGameObjectToScene(player, scene);
             SceneManager.MoveGameObjectToScene(portal, scene);
+            SceneManager.MoveGameObjectToScene(camera, scene);
             // DeleteAll2();
             
         }

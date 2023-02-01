@@ -112,7 +112,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnFire() {
-        animator.SetTrigger("SwordAttack");
+        if(numWeapon == 1){
+            animator.SetTrigger("SwordAttack");
+        }
+        if(numWeapon == 2){
+            animator.SetTrigger("SwordAttack2");
+        }
     }
 
     void OnToggleWeapon1(){
@@ -130,26 +135,19 @@ public class PlayerController : MonoBehaviour
     public void SwordAttack(){
         if(numWeapon == 1){
             LockMovement();
-
-            if(spriteRenderer.flipX == true){
-                swordAttack.AttackLeft();
-            }else{
-                swordAttack.AttackRight();
-            }
         }
-        if(numWeapon == 2){
-
-            if(spriteRenderer.flipX == true){
-                swordAttack.AttackLeft();
-            }else{
-                swordAttack.AttackRight();
-            }
+        if(spriteRenderer.flipX == true){
+            swordAttack.AttackLeft();
+        }else{
+            swordAttack.AttackRight();
         }
+        
+        
     }
 
     public void EndSwordAttack(){
-        UnlockMovement();
         swordAttack.StopAttack();
+        UnlockMovement();
     }
 
     public void LockMovement(){
