@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PortalController : MonoBehaviour
 {
     public Enemy enemy;
-    private GameObject player, portal, camera;
+    private GameObject player, portal, camera, inventory, eventSystem;
 
     void Start()
     {
@@ -26,6 +26,9 @@ public class PortalController : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         portal = GameObject.FindWithTag("Portal");
         camera = GameObject.FindWithTag("MainCamera");
+        inventory = GameObject.FindWithTag("Inventory");
+        eventSystem = GameObject.FindWithTag("Event System");
+
 
         print("The Portal Has Been Opened!!");
         DontDestroyOnLoad(player);
